@@ -21,9 +21,8 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 60px;
-  background: rgba(10, 14, 39, 0.95);
-  backdrop-filter: blur(10px);
+  padding: 15px 50px;
+  background: #0a0e27;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -33,63 +32,69 @@ a { text-decoration: none; color: inherit; }
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
   cursor: pointer;
 }
 
 .logo img {
-  height: 45px;
+  height: 40px;
   width: auto;
-  object-fit: contain;
+}
+
+.logo-placeholder {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
 }
 
 .nav-links {
   display: flex;
-  gap: 30px;
+  gap: 35px;
   list-style: none;
 }
 
 .nav-links a {
   font-size: 15px;
-  color: #c0c4d6;
+  color: #a0a4b8;
   transition: 0.3s;
-  position: relative;
   cursor: pointer;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
 }
 
-.nav-links a:hover, .nav-links a.active { color: #fff; }
+.nav-links a:hover { color: #fff; }
 
-.nav-links a.active::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #667eea;
-  border-radius: 2px;
+.nav-links a.active {
+  color: #fff;
+  border-bottom: 2px solid #667eea;
 }
 
 .nav-icons {
   display: flex;
-  gap: 18px;
+  gap: 15px;
   align-items: center;
 }
 
 .nav-icon {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.08);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: 0.3s;
-  font-size: 18px;
+  font-size: 16px;
 }
 
-.nav-icon:hover { background: rgba(255,255,255,0.1); }
+.nav-icon:hover { background: rgba(255,255,255,0.15); }
 
 .nav-icon.profile {
   background: linear-gradient(135deg, #667eea, #764ba2);
@@ -109,26 +114,22 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 80px 60px 60px;
+  padding: 80px 50px 60px;
   gap: 40px;
-  position: relative;
 }
 
 .hero-content { max-width: 55%; }
 
 .hero h1 {
-  font-size: 58px;
+  font-size: 56px;
   font-weight: 800;
   line-height: 1.15;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, #fff 0%, #c0c4d6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #fff;
 }
 
 .hero p {
-  font-size: 18px;
+  font-size: 17px;
   color: #a0a4b8;
   margin-bottom: 35px;
 }
@@ -137,7 +138,7 @@ a { text-decoration: none; color: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 15px 35px;
+  padding: 14px 32px;
   background: linear-gradient(135deg, #3b82f6, #2563eb);
   color: #fff;
   border-radius: 50px;
@@ -155,9 +156,9 @@ a { text-decoration: none; color: inherit; }
 }
 
 .hero-visual {
-  width: 45%;
+  width: 40%;
   position: relative;
-  height: 380px;
+  height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -173,28 +174,28 @@ a { text-decoration: none; color: inherit; }
 }
 
 .hero-img {
-  max-width: 400px;
+  max-width: 380px;
   width: 100%;
-  filter: drop-shadow(0 20px 40px rgba(102, 126, 234, 0.5));
+  filter: drop-shadow(0 20px 40px rgba(102, 126, 234, 0.4));
 }
 
 .glow {
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 350px;
-  height: 100px;
-  background: radial-gradient(ellipse, rgba(102, 126, 234, 0.4), transparent 70%);
+  width: 320px;
+  height: 80px;
+  background: radial-gradient(ellipse, rgba(102, 126, 234, 0.3), transparent 70%);
   border-radius: 50%;
 }
 
-/* ============ ASOSIY KARTOCHKALAR ============ */
+/* ============ ASOSIY KARTOCHKALAR (Gorizontal) ============ */
 .main-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  padding: 20px 60px 40px;
+  padding: 20px 50px 40px;
 }
 
 .card {
@@ -222,37 +223,36 @@ a { text-decoration: none; color: inherit; }
 .card.disabled:hover {
   transform: none;
   box-shadow: none;
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
-.card-header {
+.card-top {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .card-icon {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   border-radius: 12px;
   background: rgba(255,255,255,0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .card-arrow {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background: rgba(255,255,255,0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
 }
 
@@ -277,7 +277,7 @@ a { text-decoration: none; color: inherit; }
 
 /* ============ BANNER ============ */
 .banner {
-  margin: 20px 60px 40px;
+  margin: 20px 50px 40px;
   padding: 22px 30px;
   background: linear-gradient(135deg, #5b21b6, #7c3aed, #a855f7);
   border-radius: 18px;
@@ -297,14 +297,14 @@ a { text-decoration: none; color: inherit; }
 }
 
 .banner-icon {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   background: rgba(255,255,255,0.2);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .banner-title {
@@ -325,36 +325,16 @@ a { text-decoration: none; color: inherit; }
   border-radius: 50px;
   font-weight: 600;
   font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
   border: none;
   cursor: pointer;
 }
 
 /* ============ FOOTER ============ */
 .footer {
-  padding: 30px 60px;
+  padding: 25px 50px;
   text-align: center;
   border-top: 1px solid rgba(255,255,255,0.05);
 }
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-bottom: 15px;
-  flex-wrap: wrap;
-}
-
-.footer-links a {
-  color: #a0a4b8;
-  font-size: 14px;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.footer-links a:hover { color: #fff; }
 
 .footer-copy {
   color: #6b7089;
@@ -363,7 +343,7 @@ a { text-decoration: none; color: inherit; }
 
 /* ============ ICHKI SAHIFA ============ */
 .inner-page {
-  padding: 40px 60px;
+  padding: 40px 50px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -463,9 +443,7 @@ a { text-decoration: none; color: inherit; }
   font-size: 14px;
 }
 
-.form-group {
-  margin-bottom: 20px;
-}
+.form-group { margin-bottom: 20px; }
 
 .form-group label {
   display: block;
@@ -635,7 +613,6 @@ a { text-decoration: none; color: inherit; }
 }
 
 .report-form textarea:focus { border-color: #667eea; }
-
 .report-form input[type="file"] { display: none; }
 
 .upload-btn {
@@ -743,7 +720,6 @@ a { text-decoration: none; color: inherit; }
 }
 
 .topic-content.active { display: block; }
-
 .topic-content ul { margin: 15px 0; padding-left: 20px; }
 .topic-content li { margin-bottom: 10px; }
 .topic-content strong { color: #fff; }
@@ -755,7 +731,7 @@ a { text-decoration: none; color: inherit; }
   .hero { flex-direction: column; padding: 50px 30px; }
   .hero-content { max-width: 100%; }
   .hero-visual { width: 100%; }
-  .navbar { padding: 15px 30px; flex-wrap: wrap; gap: 15px; }
+  .navbar { padding: 15px 30px; }
   .inner-page { padding: 30px; }
 }
 
@@ -771,9 +747,9 @@ a { text-decoration: none; color: inherit; }
 
 <!-- ============ NAVBAR ============ -->
 <nav class="navbar">
-  <!-- LOGO RASM BILAN -->
   <div class="logo" onclick="showPage('home')">
-    <img src="media_logo.png" alt="Media Makoн Logo">
+    <img src="media_logo.png" alt="Media Makoн" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    <div class="logo-placeholder" style="display:none;">M</div>
   </div>
   <ul class="nav-links">
     <li><a class="active" onclick="showPage('home')">Bosh şahifa</a></li>
@@ -792,8 +768,8 @@ a { text-decoration: none; color: inherit; }
     <h2 id="modalTitle">Kiriş</h2>
     <p class="modal-subtitle" id="modalSubtitle">Media koordinator paneliga kiriş uçun ma'lumotlaringizni kiriting</p>
     
-    <div class="error-msg" id="errorMsg">Login yoki parol noto'ğri!</div>
-    <div class="success-msg" id="successMsg">Muvaffaqiyatli ro'yxatdan ötdingiz!</div>
+    <div class="error-msg" id="errorMsg"></div>
+    <div class="success-msg" id="successMsg"></div>
     
     <div class="form-group">
       <label>Login</label>
@@ -841,12 +817,11 @@ a { text-decoration: none; color: inherit; }
     </div>
   </section>
 
-  <!-- ASOSIY KARTOCHKALAR (6 ta) -->
+  <!-- ASOSIY KARTOCHKALAR -->
   <section class="main-cards">
     
-    <!-- 01 - BOSILADI (Media Makoн) -->
     <div class="card card-1" onclick="showPage('akademiya')">
-      <div class="card-header">
+      <div class="card-top">
         <div class="card-icon">📚</div>
         <div class="card-arrow">›</div>
       </div>
@@ -856,9 +831,8 @@ a { text-decoration: none; color: inherit; }
       </div>
     </div>
 
-    <!-- 02 - BOSILMAYDI -->
     <div class="card card-2 disabled">
-      <div class="card-header">
+      <div class="card-top">
         <div class="card-icon">🏆</div>
         <div class="card-arrow">›</div>
       </div>
@@ -868,9 +842,8 @@ a { text-decoration: none; color: inherit; }
       </div>
     </div>
 
-    <!-- 03 - BOSILMAYDI -->
     <div class="card card-3 disabled">
-      <div class="card-header">
+      <div class="card-top">
         <div class="card-icon">🎓</div>
         <div class="card-arrow">›</div>
       </div>
@@ -880,9 +853,8 @@ a { text-decoration: none; color: inherit; }
       </div>
     </div>
 
-    <!-- 04 - BOSILMAYDI -->
     <div class="card card-4 disabled">
-      <div class="card-header">
+      <div class="card-top">
         <div class="card-icon">👥</div>
         <div class="card-arrow">›</div>
       </div>
@@ -892,9 +864,8 @@ a { text-decoration: none; color: inherit; }
       </div>
     </div>
 
-    <!-- 05 - BOSILADI (Koordinatorlar) -->
     <div class="card card-5" onclick="checkCoordAccess()">
-      <div class="card-header">
+      <div class="card-top">
         <div class="card-icon">📊</div>
         <div class="card-arrow">›</div>
       </div>
@@ -904,9 +875,8 @@ a { text-decoration: none; color: inherit; }
       </div>
     </div>
 
-    <!-- 06 - BOSILMAYDI -->
     <div class="card card-6 disabled">
-      <div class="card-header">
+      <div class="card-top">
         <div class="card-icon">📈</div>
         <div class="card-arrow">›</div>
       </div>
@@ -931,11 +901,6 @@ a { text-decoration: none; color: inherit; }
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-links">
-      <a onclick="showPage('home')">Bosh şahifa</a>
-      <a onclick="showPage('akademiya')">Akademiya</a>
-      <a onclick="checkCoordAccess()">Koordinatorlar</a>
-    </div>
     <div class="footer-copy">Öquvçilar Kengaşi Media Koordinatori loyihasi</div>
   </footer>
 </div>
@@ -1036,7 +1001,7 @@ a { text-decoration: none; color: inherit; }
   <div class="inner-page">
     <button class="back-btn" onclick="showPage('home')">← Orqaga</button>
     
-    <div class="coord-welcome" id="coordWelcome">
+    <div class="coord-welcome">
       <div>
         <h2 id="welcomeName">Xush kelibsiz!</h2>
         <p id="welcomeRole">Media koordinator paneli</p>
@@ -1050,100 +1015,25 @@ a { text-decoration: none; color: inherit; }
     </div>
 
     <div class="coord-list">
-      <div class="coord-item">
-        <div class="coord-avatar">ŞZ</div>
-        <div class="coord-info">
-          <h4>Shomuradova Zebuzar</h4>
-          <p>Xorazm viloyat media koordinatori</p>
-        </div>
-      </div>
-      <div class="coord-item">
-        <div class="coord-avatar">BB</div>
-        <div class="coord-info">
-          <h4>Bekdurdiyev Baxtiyor</h4>
-          <p>Qoşkopir tuman media koordinatori</p>
-        </div>
-      </div>
-      <div class="coord-item">
-        <div class="coord-avatar">RD</div>
-        <div class="coord-info">
-          <h4>Rajabboyev Doniyor</h4>
-          <p>Xonqa tuman media koordinatori</p>
-        </div>
-      </div>
-      <div class="coord-item">
-        <div class="coord-avatar">QN</div>
-        <div class="coord-info">
-          <h4>Qadamova Nozima</h4>
-          <p>Yangiariq tuman media koordinatori</p>
-        </div>
-      </div>
-      <div class="coord-item">
-        <div class="coord-avatar">XA</div>
-        <div class="coord-info">
-          <h4>Xuşnudov Alişer</h4>
-          <p>Xiva tuman media koordinatori</p>
-        </div>
-      </div>
-      <div class="coord-item">
-        <div class="coord-avatar">RA</div>
-        <div class="coord-info">
-          <h4>Rayimberganov Abdulaziz</h4>
-          <p>Şovot tuman media koordinatori</p>
-        </div>
-      </div>
-      <div class="coord-item">
-        <div class="coord-avatar">AZ</div>
-        <div class="coord-info">
-          <h4>Atajanov Zufar</h4>
-          <p>Xiva şahar media koordinatori</p>
-        </div>
-      </div>
-      <div class="coord-item">
-        <div class="coord-avatar">ĞM</div>
-        <div class="coord-info">
-          <h4>Ğayratov Murod</h4>
-          <p>Hazorasp tuman media koordinatori</p>
-        </div>
-      </div>
-      <div class="coord-item">
-        <div class="coord-avatar">AY</div>
-        <div class="coord-info">
-          <h4>Ataxanova Yodgora</h4>
-          <p>Urganç şahar media koordinatori</p>
-        </div>
-      </div>
-      <div class="coord-item">
-        <div class="coord-avatar">XJ</div>
-        <div class="coord-info">
-          <h4>Xudoyşukurov Jaloladdin</h4>
-          <p>Tuproqqala tuman media koordinatori</p>
-        </div>
-      </div>
-      <div class="coord-item">
-        <div class="coord-avatar">AJ</div>
-        <div class="coord-info">
-          <h4>Abdurimov Javohir</h4>
-          <p>Urganç tuman media koordinatori</p>
-        </div>
-      </div>
-      <div class="coord-item">
-        <div class="coord-avatar">JA</div>
-        <div class="coord-info">
-          <h4>Jumaboyev Azizbek</h4>
-          <p>Gurlan tuman media koordinatori</p>
-        </div>
-      </div>
+      <div class="coord-item"><div class="coord-avatar">ŞZ</div><div class="coord-info"><h4>Shomuradova Zebuzar</h4><p>Xorazm viloyat media koordinatori</p></div></div>
+      <div class="coord-item"><div class="coord-avatar">BB</div><div class="coord-info"><h4>Bekdurdiyev Baxtiyor</h4><p>Qoşkopir tuman media koordinatori</p></div></div>
+      <div class="coord-item"><div class="coord-avatar">RD</div><div class="coord-info"><h4>Rajabboyev Doniyor</h4><p>Xonqa tuman media koordinatori</p></div></div>
+      <div class="coord-item"><div class="coord-avatar">QN</div><div class="coord-info"><h4>Qadamova Nozima</h4><p>Yangiariq tuman media koordinatori</p></div></div>
+      <div class="coord-item"><div class="coord-avatar">XA</div><div class="coord-info"><h4>Xuşnudov Alişer</h4><p>Xiva tuman media koordinatori</p></div></div>
+      <div class="coord-item"><div class="coord-avatar">RA</div><div class="coord-info"><h4>Rayimberganov Abdulaziz</h4><p>Şovot tuman media koordinatori</p></div></div>
+      <div class="coord-item"><div class="coord-avatar">AZ</div><div class="coord-info"><h4>Atajanov Zufar</h4><p>Xiva şahar media koordinatori</p></div></div>
+      <div class="coord-item"><div class="coord-avatar">ĞM</div><div class="coord-info"><h4>Ğayratov Murod</h4><p>Hazorasp tuman media koordinatori</p></div></div>
+      <div class="coord-item"><div class="coord-avatar">AY</div><div class="coord-info"><h4>Ataxanova Yodgora</h4><p>Urganç şahar media koordinatori</p></div></div>
+      <div class="coord-item"><div class="coord-avatar">XJ</div><div class="coord-info"><h4>Xudoyşukurov Jaloladdin</h4><p>Tuproqqala tuman media koordinatori</p></div></div>
+      <div class="coord-item"><div class="coord-avatar">AJ</div><div class="coord-info"><h4>Abdurimov Javohir</h4><p>Urganç tuman media koordinatori</p></div></div>
+      <div class="coord-item"><div class="coord-avatar">JA</div><div class="coord-info"><h4>Jumaboyev Azizbek</h4><p>Gurlan tuman media koordinatori</p></div></div>
     </div>
 
-    <!-- HISOBOT BO'LIMI -->
     <div class="report-section">
       <h3>📊 Hisobot yuboriş</h3>
       <div class="report-form">
         <textarea id="reportText" placeholder="Hisobotingizni şu yerga yozing..."></textarea>
-        <label class="upload-btn" for="reportFile">
-          📎 Rasm yuklaş
-        </label>
+        <label class="upload-btn" for="reportFile">📎 Rasm yuklaş</label>
         <input type="file" id="reportFile" accept="image/*" onchange="previewImage(this)">
         <img id="imagePreview" style="max-width:200px; border-radius:10px; margin-top:10px; display:none;">
         <br><br>
@@ -1161,7 +1051,6 @@ a { text-decoration: none; color: inherit; }
 </div>
 
 <script>
-// ============ KOORDINATORLAR MA'LUMOTLARI ============
 const coordinators = [
   { login: 'zebuzar', password: 'xorazm2024', name: 'Shomuradova Zebuzar', role: 'Xorazm viloyat media koordinatori' },
   { login: 'baxtiyor', password: 'qoshkopir2024', name: 'Bekdurdiyev Baxtiyor', role: 'Qoşkopir tuman media koordinatori' },
@@ -1181,18 +1070,14 @@ let currentUser = null;
 let isLoginMode = true;
 let uploadedImage = null;
 
-// ============ SAHIFA ALMASHTIRISH ============
 function showPage(pageName) {
   document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
   const targetPage = document.getElementById('page-' + pageName);
-  if (targetPage) {
-    targetPage.classList.add('active');
-  }
+  if (targetPage) targetPage.classList.add('active');
   document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ============ KOORDINATOR KIRISH TEKSHIRISH ============
 function checkCoordAccess() {
   if (currentUser) {
     showPage('koordinatorlar');
@@ -1203,7 +1088,6 @@ function checkCoordAccess() {
   }
 }
 
-// ============ MODAL ============
 function openModal() {
   document.getElementById('loginModal').classList.add('active');
   document.getElementById('errorMsg').style.display = 'none';
@@ -1311,7 +1195,6 @@ function logout() {
   showPage('home');
 }
 
-// ============ HISOBOT ============
 function previewImage(input) {
   if (input.files && input.files[0]) {
     const reader = new FileReader();
@@ -1326,15 +1209,8 @@ function previewImage(input) {
 
 function submitReport() {
   const text = document.getElementById('reportText').value.trim();
-  if (!text) {
-    alert('Hisobot matnini kiriting!');
-    return;
-  }
-  
-  if (!currentUser) {
-    alert('Avval tizimga kiring!');
-    return;
-  }
+  if (!text) { alert('Hisobot matnini kiriting!'); return; }
+  if (!currentUser) { alert('Avval tizimga kiring!'); return; }
   
   const report = {
     author: currentUser.name,
@@ -1378,13 +1254,11 @@ function loadReports() {
   `).join('');
 }
 
-// ============ AKADEMIYA MAVZULARI ============
 function toggleTopic(card) {
   const content = card.querySelector('.topic-content');
   content.classList.toggle('active');
 }
 
-// ============ KARTOCHKA ANIMATSIYASI (faqat bosiladiganlar) ============
 document.querySelectorAll('.card:not(.disabled)').forEach(card => {
   card.addEventListener('click', function() {
     this.style.transform = 'scale(0.97)';
@@ -1392,7 +1266,6 @@ document.querySelectorAll('.card:not(.disabled)').forEach(card => {
   });
 });
 
-// Modal tashqarisiga bosilganda yopish
 document.getElementById('loginModal').addEventListener('click', function(e) {
   if (e.target === this) closeModal();
 });
